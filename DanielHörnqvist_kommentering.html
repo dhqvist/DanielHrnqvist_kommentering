@@ -1,60 +1,76 @@
 <!DOCTYPE html>
 <!-- Så här skriver du dina kommantare efter varje rad eller stycke -->
 <html lang="sv">
+  <!--head är koden som inte visas, innehåller oftast title, links till css, vilket charset det ska va osv.-->
   <head>
+    <!--charset utf-8 är dom 8 vanligaste teckuppsättningarna. <meta/> är ett element som representerar metadata som inte går in med andra html relaterade element, som tex : link, script,style osv.-->
     <meta charset="utf-8" />
+    <!--Title för hemsidan, kommer visas i fliken i webbläsaren som "Exempel 1"-->
     <title>Exempel 1</title>
   </head>
+  <!--style är början av css kod som används på hemsidan -->
   <style>
+    /*Targetar alla h1:or och stylar den att den ska vara i mitten av dens box(text-align: center;)
+    , sen ändras dens font storlek med 300%(font-size) */
     h1 {
       text-align: center;
       font-size: 300%;
     }
+    /* Ett id som är knuten till en paragraf där vi ändrar bakgrundsfärgen till ljusblå, själva texten till svart, lägger till ett större mellanrum utanför textens box med 40 pixlar(padding), sen genom text-align:left; lägger vi texten på boxens vänstra sida*/
     #myHeader {
       background-color: lightblue;
       color: black;
       padding: 40px;
       text-align: left;
     }
+    /*Här targetar vi table elementet där vi sätter typsnittet arial, sans-serif sen genom boder-collapse: collapse; så kollapsar vi tablen så cellerna i tablen har en gemensam border/gränser, sen tillslut så gör vi bredden till 100% */
     table {
       font-family: arial, sans-serif;
       border-collapse: collapse;
       width: 100%;
     }
+    /* targetat cellerna i tablen där vi ger en ljusgråaktig gräns/border med 1 pixel och en linje som är solid, med hjälp av text-align sätter vi texten till vänster i boxen sen med padding: 8pixlar; ger vi lite utrymme utanför texten */
     td,
     th {
       border: 1px solid #dddddd;
       text-align: left;
       padding: 8px;
     }
-
+    /*Här targetar vi alla child elements av table med elementet tr men bara jämnt, så med andra ord eftersom vi har 3 st tr i tablen så blir bara tr nummer 2 targetad av background-color*/
     tr:nth-child(even) {
       background-color: #dddddd;
     }
+    /* slutet av css koden*/
   </style>
+  <!--början av bodyn, det som syns(strukturen) -->
   <body>
+    <!--h1 är ett header element som är största rubriken, helst ska man bara ha en h1 tillexempel, så här skriver vi ut Att kommentera koden högst upp på sidan som en titel.-->
     <h1>Att kommentera koden</h1>
+    <!--h2 ännu ett header element men mindre size än h1. Här skriver vi ut en instruktion till uppgiften som en underrubrik.-->
     <h2>Du ska i denna uppgift kommentera koden till denna sidan.</h2>
+    <!--Samma här h3 är mindre än h2,h1 och här skriver vi ut en text som styrker att vara tydlig så det är lätt att förstå i kommentarerna.-->
     <h3>
       Det är viktigt att du är tydlig i din beskrivning så det är lätt för alla
       att förstå vad du menar.
     </h3>
-
+    <!-- En paragraf eller "stycke där vi har en text som sedan hoppar ner en rad tack vare <br/>"breakrule seden har vi bakat in en <strong> som gör en del av texten bold/fet. -->
     <p>
       Det är viktigt att vara kommunikativ så slipper vi en massa
       missförstånd.<br />
       Det här är <strong>lite mer text</strong> på en ny rad.
     </p>
-
+    <!-- paragraf som har ett id i sig(myHeader) så vi kan styla med css sen är det ett stycke med text -->
     <p id="myHeader">
       Ibland vill man dela upp texten för att den ska bli lättare att läsa och
       kanske förstarka vissa saker som är viktiga!
     </p>
+    <!-- breakrule, skapar ett mellanrum -->
     <br />
+    <!--vanlig paragraf/stycke -->
     <p>
       För att underlätta för läsare kan det vara bra att dela upp information:
     </p>
-
+    <!-- Skapar en ordered list(ol) tex en lista med 1,2,3 osv, li är själva listan tex så många li vi har så många rader kommer innefatta i ordered listan.-->
     <ol>
       <li>
         Första - det är viktigt att vi tänker på vem som ska ha användning för
@@ -69,15 +85,18 @@
         hitta den info man söker.
       </li>
     </ol>
-
+    <!-- Här har vi en unordered list(ul) som gör en lista fast med punkter istället för siffor -->
     <ul>
+      <!--lh är en list header så en typ av titel för listan-->
       <lh><h2>Bra länkar</h2></lh>
       <li>
+        <!--I listan har vi en Anchored tag(a) som låter oss göra en länk till en hemsida där man kan validera sin kod samt en text som förklarar.-->
         <a href="https://validator.w3.org/">Validering av kod.</a> När vi
         programmerat html så kan vi gå in på w3Cs hemsida och validera den så vi
         inte gjort några missar.
       </li>
       <li>
+        <!--En anchored tag som skapar en länk till en sida om komplementfärger-->
         <a
           href="https://www.arkitektkopia.se/akademi/stark-budskapet-med-komplementfarger/"
           >Komplementfärger</a
@@ -85,13 +104,16 @@
         hjälper oss så att det vi vill ha fram blir tydligare.
       </li>
     </ul>
-
+    <!-- En table är så att man kan arrangera data i rader och kolumner -->
     <table>
+      <!-- Tr elementet definerar hur många rader ett table ska ha, då vi har 3 tr öppningar och 3 tr stängningar så blir det 3 rader-->
       <tr>
+        <!--th är som sagt en header cell som är som en rubrik för table-->
         <th>Andra sätt att dela upp information</th>
         <th>För att det ska bli lättare att hitta</th>
       </tr>
       <tr>
+        <!--Td definerar en standard cell i en table som innehåller data, så tex texten i rutorna-->
         <td>data1</td>
         <td>data2</td>
       </tr>
@@ -99,15 +121,17 @@
         <td>data3</td>
         <td>data4</td>
       </tr>
+      <!--avslutningen i table-->
     </table>
-
+    <!--Image element så vi kan åkalla bilder till hemsidan samt alt är en beskrivning av bilden, det är bra tex om bilden inte skulle visas kommer texten visas istället eller om någon blind får det uppläst så vet man vad bilden är för något, sen sätter vi bredden på bilden till 400-->
     <img src="tradgard1-1.jpg" alt="trädgård" width="400" />
+    <!-- Åkallar en bild på ett sovrum/garderob med bredden 250-->
     <img
       src="https://kampanj.expressen.se/ikea/wp-content/uploads/2021/12/v1.jpg"
       alt="sovrum"
       width="250"
     />
-
+    <!--Form representerar en dokument sektion där man kan interigera med olika rutor för att skriva in information, i detta fallet har vi två rutor som uppmanar ett förnamn och ett efternamn. Sen har vi en select  som skapar en rullmeny där man kan antingen välja två olika bilar sen tillslut en "knapp" där man kan skicka/submitta sitt svar. Att tillägga har vi även breakrule bakom varje ruta i formen som uppmanar om förnamn och efternamn så dom hamnar på egna rader.-->
     <form>
       First name: <input type="text" name="fname" /><br />
       Last name:<input type="text" name="lname" /><br />
